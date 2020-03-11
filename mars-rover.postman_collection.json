@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "08be3086-9a1e-4944-a5e8-d5058df88e96",
+		"name": "mars-rover",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Load Dates File",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\"b90af3ec-be20-4dbb-901f-a19475e5563c\""
+				},
+				"url": {
+					"raw": "https://localhost:44344/Gallery/LoadDatesFile",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44344",
+					"path": [
+						"Gallery",
+						"LoadDatesFile"
+					]
+				},
+				"description": "LoadDatesFile"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
