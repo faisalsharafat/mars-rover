@@ -136,7 +136,7 @@ namespace mars_rover_BL.Services
                     }
                 });
 
-                //_fileWrapper.Delete(dateFilePath);
+                _fileWrapper.Delete(dateFilePath);
             }
         }
 
