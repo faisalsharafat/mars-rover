@@ -1,0 +1,18 @@
+﻿@model mars_rover_models.ViewModels.DateFolders
+@{
+    ViewData["Title"] = "Dates Gallery";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Mars Rover Image Gallery.</h1>
+    <p>Click on individual dates to view the image gallery.</p>
+
+    <ul>
+        @foreach (var folderName in Model.Names ?? new List<string>())
+        {
+            <li>
+                @Html.ActionLink(DateTime.Parse(folderName).ToString("ddd d MMM yyyy"), "Gallery", new { date = folderName })
+            </li>
+        }
+    </ul>
+</div>

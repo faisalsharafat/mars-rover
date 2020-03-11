@@ -1,0 +1,116 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+
+
+
+
+
+
+/*_       ___  ___       ___   _____   _____        _____       ___   _       _       _____   _____   __    __ 
+ | |     /   |/   |     /   | /  ___| | ____|      /  ___|     /   | | |     | |     | ____| |  _  \  \ \  / / 
+ | |    / /|   /| |    / /| | | |     | |__        | |        / /| | | |     | |     | |__   | |_| |   \ \/ /  
+ | |   / / |__/ | |   / / | | | |  _  |  __|       | |  _    / / | | | |     | |     |  __|  |  _  /    \  /   
+ | |  / /       | |  / /  | | | |_| | | |___       | |_| |  / /  | | | |___  | |___  | |___  | | \ \    / /    
+ |_| /_/        |_| /_/   |_| \_____/ |_____|      \_____/ /_/   |_| |_____| |_____| |_____| |_|  \_\  /_/     */
+div.gallery {
+    border: 1px solid #ccc;
+}
+
+    div.gallery:hover {
+        border: 1px solid #777;
+    }
+
+    div.gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
