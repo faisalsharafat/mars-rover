@@ -12,13 +12,31 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
 						"type": "text"
+					},
+					{
+						"key": "authKey",
+						"value": "b90af3ec-be20-4dbb-901f-a19475e5563c",
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": "\"b90af3ec-be20-4dbb-901f-a19475e5563c\""
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "authKey",
+							"value": "b90af3ec-be20-4dbb-901f-a19475e5563c",
+							"type": "text"
+						},
+            {
+              "key": "DatesFile",
+              "type": "file",
+              "src": "/C:/Temp/rover/dates.txt"
+            }
+					]
 				},
 				"url": {
 					"raw": "https://localhost:44344/Gallery/LoadDatesFile",

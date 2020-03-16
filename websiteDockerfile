@@ -1,0 +1,25 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build-env
+WORKDIR /app
+EXPOSE 443/tcp
+
+# Copy csproj and restore as distinct layers
+COPY ["./mars-rover-BL/mars-rover-BL.csproj", "mars-rover-BL/"]
+COPY ["./mars-rover-models/mars-rover-models.csproj", "mars-rover-models/"]
+COPY ["./mars-rover-web/mars-rover-web.csproj", "mars-rover-web/"]
+
+RUN dotnet restore "mars-rover-web/mars-rover-web.csproj"
+
+# Copy everything else and build
+COPY ./mars-rover-web/ ./mars-rover-web/
+COPY ./mars-rover-BL/ ./mars-rover-BL/
+COPY ./mars-rover-models/ ./mars-rover-models/
+
+RUN dotnet publish  "mars-rover-web/mars-rover-web.csproj" -c Release -o out
+
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
+WORKDIR /app
+COPY --from=build-env /app/mars-rover-models/out/ .
+COPY --from=build-env /app/mars-rover-BL/out/ .
+COPY --from=build-env /app/mars-rover-web/out/ .
+ENTRYPOINT ["dotnet", "mars-rover-web.dll"]

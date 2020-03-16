@@ -6,6 +6,7 @@
     <RootNamespace>mars_rover_web</RootNamespace>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
     <UserSecretsId>64c6dae1-7c07-457f-9eb1-c1f5c0f3334d</UserSecretsId>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
 

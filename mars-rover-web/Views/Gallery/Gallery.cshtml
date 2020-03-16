@@ -9,21 +9,14 @@
 
     @foreach(var galleryImage in Model)
     {
-    @*<a id='@galleryImage.Id' href='@Url.Action("Download", "Gallery", new { id = galleryImage.Id })' title='@galleryImage.Title' class='links'>
-        <img alt='@galleryImage.Title' src='@Url.Action("Download", "Gallery", new { id = galleryImage.ThumbnailId })'>
-    </a>*@
-
-
-    <div class="responsive">
-        <div class="gallery">
-            <a target="_blank" href='@Url.Action("Download", "Gallery", new { id = galleryImage.Id })'>
-                <img alt='@galleryImage.Title' width="200" height="200" src='@Url.Action("Download", "Gallery", new { id = galleryImage.ThumbnailId })'>
-            </a>
-            <div class="desc">@galleryImage.Title</div>
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href='@Url.Action("Download", "Gallery", new { id = galleryImage.Id })'>
+                    <img alt='@galleryImage.Title' width="200" height="200" src='@Url.Action("Download", "Gallery", new { id = galleryImage.ThumbnailId })'>
+                </a>
+                <div class="desc">@galleryImage.Title</div>
+            </div>
         </div>
-    </div>
-
-
     }
 
 

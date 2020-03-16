@@ -12,6 +12,7 @@ using mars_rover_BL.Services;
 using mars_rover_models.ViewModels;
 using Newtonsoft.Json;
 using System.Text;
+using System.Net.Http.Headers;
 
 namespace mars_rover_web.Controllers
 {
@@ -62,12 +63,25 @@ namespace mars_rover_web.Controllers
 
 
         [HttpPost]
-        public IActionResult LoadDatesFile([FromBody] string authKey)
+        public IActionResult LoadDatesFile(UploadedFile uploadedFile)
         {
-            var response = webApiService.Post($"{_appSettings.BusinessLayerUrl}Folders", new StringContent($"\"{authKey}\"", Encoding.UTF8, "application/json")).Result;
-            if (response.IsSuccessStatusCode)
+            if (!string.IsNullOrWhiteSpace(uploadedFile.AuthKey) && uploadedFile.DatesFile != null )
             {
-                return Ok();
+                var multipart = new MultipartFormDataContent();
+
+                var streamContent = new StreamContent(uploadedFile.DatesFile.OpenReadStream());
+                streamContent.Headers.ContentType = new MediaTypeHeaderValue(uploadedFile.DatesFile.ContentType);
+                multipart.Add(streamContent, "DatesFile", uploadedFile.DatesFile.FileName);
+
+                var authKey = new StringContent(uploadedFile.AuthKey, Encoding.UTF8);
+
+                multipart.Add(authKey, "AuthKey");
+
+                var response = webApiService.Post($"{_appSettings.BusinessLayerUrl}Folders", multipart).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    return Ok();
+                } 
             }
 
             return BadRequest();

@@ -3,13 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mars-rover-web", "mars-rover-web\mars-rover-web.csproj", "{A24E4281-B919-4488-A6D6-4E64132D8C71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mars-rover-web", "mars-rover-web\mars-rover-web.csproj", "{A24E4281-B919-4488-A6D6-4E64132D8C71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mars-rover-models", "mars-rover-models\mars-rover-models.csproj", "{232F953B-ED2C-4C7B-95AF-89E353F25529}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mars-rover-models", "mars-rover-models\mars-rover-models.csproj", "{232F953B-ED2C-4C7B-95AF-89E353F25529}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mars-rover-webapi", "mars-rover-webapi\mars-rover-webapi.csproj", "{320A4B4D-4E89-494B-B943-0A674C543104}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mars-rover-webapi", "mars-rover-webapi\mars-rover-webapi.csproj", "{320A4B4D-4E89-494B-B943-0A674C543104}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mars-rover-BL", "mars-rover-BL\mars-rover-BL.csproj", "{0127707E-002A-4637-9609-C9215ABFFCA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mars-rover-BL", "mars-rover-BL\mars-rover-BL.csproj", "{0127707E-002A-4637-9609-C9215ABFFCA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DockerImages", "DockerImages", "{ABF4C5E1-82C1-45DB-B8FE-DE42B35202B4}"
+	ProjectSection(SolutionItems) = preProject
+		websiteDockerfile = websiteDockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Instructions", "Instructions", "{1D17D490-5472-40A8-BB4D-2C7C721F3401}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

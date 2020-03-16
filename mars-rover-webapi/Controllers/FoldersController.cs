@@ -35,19 +35,6 @@ namespace mars_rover_webapi.Controllers
             return _marsRoverService.GetGalleryImages(date);
         }
 
-            //[Route("Image/{id}")]
-            //[HttpGet]
-            //public HttpResponseMessage GetImage(string id)
-            //{
-            //    var fileContent = _marsRoverService.GetImageFile(id);
-
-            //    var response = new HttpResponseMessage(HttpStatusCode.OK)
-            //    {
-            //        Content = new ByteArrayContent(fileContent)
-            //    };
-            //    return response;
-            //}
-
         [Route("Image/{id}")]
         [HttpGet]
         public ActionResult GetImage(string id)
@@ -58,9 +45,9 @@ namespace mars_rover_webapi.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] string authPassKey)
+        public ActionResult Post([FromForm] UploadedFile uploadedFile)
         {
-            _marsRoverService.LoadNewDates(authPassKey);
+            _marsRoverService.LoadNewDates(uploadedFile);
 
             return Ok();
         }

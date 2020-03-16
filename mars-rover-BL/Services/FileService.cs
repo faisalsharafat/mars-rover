@@ -1,5 +1,7 @@
 ﻿using System.IO;
 using System.Linq;
+using System.Text;
+using Microsoft.AspNetCore.Http;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
@@ -70,6 +72,23 @@ namespace mars_rover_BL.Services
 
             return content;
         }
+
+
+        /// <summary>
+        /// Returns the line data of the in-memory file. 
+        /// </summary>
+        /// <param name="file">In-memory file</param>
+        /// <returns></returns>
+        public string[] Get(IFormFile file)
+        {
+            var result = new StringBuilder();
+            using (var reader = new StreamReader(file.OpenReadStream()))
+            {
+                var fileContent = reader.ReadToEnd();
+                return fileContent.Split(System.Environment.NewLine);
+            }
+        }
+
 
         public void Delete(string path)
         {

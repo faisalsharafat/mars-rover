@@ -97,15 +97,13 @@ namespace mars_rover_BL.Services
         /// </summary>
         /// <param name="authPassKey">already exchanged secure key</param>
         /// <returns></returns>
-        public void LoadNewDates(string authPassKey)
+        public void LoadNewDates(UploadedFile uploadedFile)
         {
             string[] newDates = null;
-            if(_appSettings.AuthPassKey.ToLowerInvariant().Trim().Equals(authPassKey.ToLowerInvariant().Trim()))
+            if(_appSettings.AuthPassKey.ToLowerInvariant().Trim().Equals(uploadedFile.AuthKey.ToLowerInvariant().Trim()))
             {
                 //check for "dates.txt"
-                string dateFilePath = Path.Combine(_appSettings.RoverDateImagesPath, _appSettings.DatesFileName);
-                if (_fileWrapper.DirectoryExists(_appSettings.RoverDateImagesPath))
-                    newDates = _fileWrapper.Get(dateFilePath);
+                newDates = _fileWrapper.Get(uploadedFile.DatesFile);
 
                 Parallel.ForEach(newDates, newDate =>
                 {
@@ -135,8 +133,6 @@ namespace mars_rover_BL.Services
                         }
                     }
                 });
-
-                _fileWrapper.Delete(dateFilePath);
             }
         }
 

@@ -5,4 +5,8 @@
     <RootNamespace>mars_rover_models</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="2.2.0" />
+  </ItemGroup>
+
 </Project>
